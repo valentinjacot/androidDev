@@ -11,7 +11,7 @@
 9-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:5:5-19:19
+11-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:5:5-27:19
 12        android:allowBackup="true"
 12-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -28,20 +28,37 @@
 19        android:testOnly="true"
 20        android:theme="@style/AppTheme" >
 20-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:11:9-40
-21        <activity android:name="com.example.myfirstapplication.MainActivity" >
-21-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:12:9-18:20
-21-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:12:19-47
-22            <intent-filter>
-22-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:13:13-17:29
-23                <action android:name="android.intent.action.MAIN" />
-23-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:14:17-69
-23-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:14:25-66
-24
-25                <category android:name="android.intent.category.LAUNCHER" />
-25-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:16:17-77
-25-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:16:27-74
-26            </intent-filter>
-27        </activity>
-28    </application>
-29
-30</manifest>
+21
+22        <!-- <activity android:name=".DisplayMessageActivity"></activity> -->
+23        <activity
+23-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:13:9-19:20
+24            android:name="com.example.myfirstapplication.DisplayMessageActivity"
+24-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:13:19-57
+25            android:parentActivityName="com.example.myfirstapplication.MainActivity" >
+25-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:14:13-55
+26
+27            <!-- The meta-data tag is required if you support API level 15 and lower -->
+28            <meta-data
+28-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:16:13-18:49
+29                android:name="android.support.PARENT_ACTIVITY"
+29-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:17:17-63
+30                android:value=".MainActivity" />
+30-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:18:17-46
+31        </activity>
+32        <activity android:name="com.example.myfirstapplication.MainActivity" >
+32-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:20:9-26:20
+32-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:20:19-47
+33            <intent-filter>
+33-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:21:13-25:29
+34                <action android:name="android.intent.action.MAIN" />
+34-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:22:17-69
+34-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:22:25-66
+35
+36                <category android:name="android.intent.category.LAUNCHER" />
+36-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:24:17-77
+36-->C:\Git\androidDev\MyFirstApplication\app\src\main\AndroidManifest.xml:24:27-74
+37            </intent-filter>
+38        </activity>
+39    </application>
+40
+41</manifest>

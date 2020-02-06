@@ -20,12 +20,12 @@ public class Main {
 		Calendar today = Calendar.getInstance();
 //		System.out.println(today.DAY_OF_MONTH);
 		System.out.println(sdf.format(today.getTime()));
-		Calendar term = new GregorianCalendar(2020,5,11); //month start at 0
+		Calendar term = new GregorianCalendar(2020,1,10); //month start at 0
 		System.out.println(sdf.format(term.getTime()));
-		int res=(int)getDifferenceDays(today,term);
+		int res= 280 - (int)getDifferenceDays(today,term);
 		System.out.println(getDifferenceDays(today,term));
-		System.out.println(Math.ceil(res/7));
-		System.out.println(Math.floorMod(res, 7));
+		System.out.println((int)(res/7));
+		System.out.println(res % 7);
 	}
 
 }

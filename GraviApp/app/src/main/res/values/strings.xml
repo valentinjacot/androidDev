@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">GraviApp</string>
+    <string name="title">Welcome to the GraviApp</string>
+    <string name="edit_date">dd/MM/yyyy</string>
+    <string name="TermDate">Enter a Date :</string>
+    <string name="ButtoGo">GO!</string>
+</resources>

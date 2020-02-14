@@ -10,4 +10,10 @@ public class dateComputing {
         long diff = d2.getTime().getTime() - d1.getTime().getTime();
         return TimeUnit.DAYS.convert(diff, TimeUnit.MILLISECONDS);
     }
+    public static int getDays(int res){
+        return res % 7;
+    }
+    public static int getWeeks(int res){
+        return (int) Math.ceil(res/7);
+    }
 }

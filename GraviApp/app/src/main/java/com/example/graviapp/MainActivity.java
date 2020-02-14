@@ -24,37 +24,32 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public int getDays(Date date){
-        return 0;
-    }
-    public int getWeeks(Date date){
-        return 0;
-    }
-    public void startCalculation(View view)throws Exception{
+
+    public void startCalculation(View view) throws Exception{
         //Intent intent = new Intent( this, MainActivity.class); //args: one context (this) and a class
         EditText editText = (EditText) findViewById(R.id.editText);
         String termString = editText.getText().toString();
         /************************************/
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf2 = new SimpleDateFormat("dd.MM.yyyy");
+        TextView textView = findViewById(R.id.textView3);
+
         Calendar today = Calendar.getInstance();
         Date termDate;
         try {
             termDate = sdf.parse(termString);
-        } catch (ParseException e){
+        } catch (Exception e){
             throw e;
         }
-        Calendar termCal = Calendar.getInstance();
-        termCal.setTime(termDate);
-        int res =280 - (int) dateComputing.getDifferenceDays(today, termCal);
-        //startActivity(intent); // starts an instance of the DisplayMessageActivity (spec. by the intent)$
-        int numWeek = (int) Math.ceil(res/7);
-        int numDay = (int) res % 7;
+            Calendar termCal = Calendar.getInstance();
+            termCal.setTime(termDate);
+            int res = 280 - (int) dateComputing.getDifferenceDays(today, termCal);
+            //startActivity(intent); // starts an instance of the DisplayMessageActivity (spec. by the intent)$
+            int numWeek = dateComputing.getWeeks(res);
+            int numDay = dateComputing.getDays(res);
+            textView.setText(Integer.toString(numWeek) + " Weeks and " + Integer.toString(numDay) + " Days");
+
         /************************************/
-
-        //intent.putExtra(EXTRA_MESSAGE, res); //adds the value of EditText to the intent
-        TextView textView = findViewById(R.id.textView3);
-
-        textView.setText(Integer.toString(numWeek) + " Weeks and " + Integer.toString(numDay)+ " Days");
     }
 /**    public void displayDate(View view){
         Intent intent =  getIntent();

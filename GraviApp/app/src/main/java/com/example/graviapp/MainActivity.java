@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void startCalculation(View view) throws Exception{
+    public void startCalculation(View view){
         //Intent intent = new Intent( this, MainActivity.class); //args: one context (this) and a class
         EditText editText = (EditText) findViewById(R.id.editText);
         String termString = editText.getText().toString();
@@ -33,13 +33,15 @@ public class MainActivity extends AppCompatActivity {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat sdf2 = new SimpleDateFormat("dd.MM.yyyy");
         TextView textView = findViewById(R.id.textView3);
-
+        int c = 0;
         Calendar today = Calendar.getInstance();
-        Date termDate;
+        Date termDate=new Date();
         try {
             termDate = sdf.parse(termString);
         } catch (Exception e){
-            throw e;
+            textView.setText("Please write the date in this format: dd/MM/yyyy \n Exception thrown : \n" + e.getMessage());
+            c+=1;
+            //throw e;
         }
             Calendar termCal = Calendar.getInstance();
             termCal.setTime(termDate);
@@ -47,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
             //startActivity(intent); // starts an instance of the DisplayMessageActivity (spec. by the intent)$
             int numWeek = dateComputing.getWeeks(res);
             int numDay = dateComputing.getDays(res);
-            textView.setText(Integer.toString(numWeek) + " Weeks and " + Integer.toString(numDay) + " Days");
+            if(c==0) textView.setText(Integer.toString(numWeek) + " Weeks and " + Integer.toString(numDay) + " Days");
 
         /************************************/
     }
